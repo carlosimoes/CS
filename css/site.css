@@ -77,7 +77,7 @@ a:hover { text-decoration-thickness: 2px; }
 .btn-ghost:hover { background: color-mix(in srgb, var(--raised) 85%, var(--ink)); }
 
 /* Hero */
-.hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: var(--s12); align-items: center; padding-top: var(--s24); padding-bottom: var(--s20); }
+.hero { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--s12); align-items: center; padding-top: var(--s24); padding-bottom: var(--s20); }
 .eyebrow { color: var(--ink-2); font-size: 15px; margin-bottom: var(--s4); }
 h1 { font-size: clamp(32px, 4.6vw, 48px); line-height: 1.1; letter-spacing: -0.02em; max-width: 18ch; }
 .lede { color: var(--ink-2); font-size: 18px; margin-top: var(--s5); max-width: 56ch; }
@@ -86,9 +86,9 @@ h1 { font-size: clamp(32px, 4.6vw, 48px); line-height: 1.1; letter-spacing: -0.0
 /* Ledger, the one bright element */
 .ledger { margin: 0; background: var(--card); border: 1px solid var(--line-2); border-radius: var(--r2); padding: var(--s5) var(--s6) var(--s4); box-shadow: 0 1px 0 var(--line), 0 12px 32px -20px rgba(28, 27, 25, 0.25); }
 .ledger figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s3); padding-bottom: var(--s3); border-bottom: 1px solid var(--line-2); font-weight: 500; }
-.ledger table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.ledger table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .ledger th { text-align: left; font-weight: 400; color: var(--muted); font-size: 13px; padding: var(--s3) 0 var(--s2); }
-.ledger td { padding: var(--s2) 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ledger td { padding: 6px 0; white-space: nowrap; border-bottom: 1px solid var(--line); vertical-align: top; }
 .ledger td + td, .ledger th + th { padding-left: var(--s3); }
 .ledger td:nth-child(2) { color: var(--ink-2); }
 .ledger .num { text-align: right; white-space: nowrap; }
@@ -177,3 +177,5 @@ h3 { font-size: 17px; line-height: 1.4; }
   .ledger { padding: var(--s4); }
   .ledger table { font-size: 13px; }
 }
+
+@media (max-width: 560px) { .ledger td { white-space: normal; } .ledger td:nth-child(2), .ledger th:nth-child(2) { display: none; } }
