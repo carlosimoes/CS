@@ -187,12 +187,14 @@ h3 { font-size: 17px; line-height: 1.4; }
 @media (max-width: 900px) { .cards-3 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .cards-2, .cards-3 { grid-template-columns: 1fr; } .work-org .mono { margin-left: 0; width: 100%; } }
 
-/* Logo matrix: tools and platforms */
-.logo-grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 1px; margin: 0 0 var(--s16); padding: 0; list-style: none; background: var(--line-2); border: 1px solid var(--line-2); border-radius: var(--r2); overflow: hidden; }
-.logo-grid li { position: relative; display: grid; place-items: center; aspect-ratio: 1; background: var(--paper); color: var(--ink-2); transition: color 200ms var(--ease), background-color 200ms var(--ease); }
-.logo-grid li:hover { color: var(--ink); background: radial-gradient(circle at 50% 40%, var(--accent-soft), var(--paper) 70%); }
-.logo-i { width: 40px; height: 40px; background: currentColor; -webkit-mask: var(--src) center / contain no-repeat; mask: var(--src) center / contain no-repeat; }
-.logo-name { position: absolute; bottom: var(--s3); left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 11px; color: var(--muted); opacity: 0; transform: translateY(4px); transition: opacity 200ms var(--ease), transform 200ms var(--ease); }
-.logo-grid li:hover .logo-name { opacity: 1; transform: none; }
-@media (max-width: 900px) { .logo-grid { grid-template-columns: repeat(6, 1fr); } }
-@media (max-width: 600px) { .logo-grid { grid-template-columns: repeat(3, 1fr); } .logo-i { width: 32px; height: 32px; } }
+/* Sponsor wall: tools and platforms */
+.sponsors { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s3); margin: 0 0 var(--s16); padding: 0; list-style: none; }
+.sponsors li { display: flex; align-items: center; justify-content: center; gap: var(--s3); flex: 0 0 204px; height: 96px; padding: 0 var(--s3); overflow: hidden; background: linear-gradient(180deg, #0e1320, var(--card)); border: 1px solid var(--line); border-radius: var(--r2); color: var(--ink); font-size: 16px; font-weight: 500; letter-spacing: -0.01em; white-space: nowrap; transition: border-color 200ms var(--ease); }
+.sponsors img { height: 32px; width: auto; max-width: 120px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.78; transition: filter 200ms var(--ease), opacity 200ms var(--ease); }
+.sponsors li.wm img { height: 32px; max-width: 160px; }
+.sponsors li.wm img[src*="spacy"] { height: 72px; max-width: 150px; }
+.sponsors li span { opacity: 0.78; transition: opacity 200ms var(--ease); }
+.sponsors li:hover { border-color: rgba(61, 220, 151, 0.35); }
+.sponsors li:hover img { filter: none; opacity: 1; }
+.sponsors li:hover span { opacity: 1; }
+@media (max-width: 600px) { .sponsors li { flex-basis: calc(50% - 6px); height: 80px; font-size: 15px; padding: 0 var(--s3); } .sponsors img { height: 28px; } .sponsors li.wm img { height: 26px; max-width: 120px; } }
