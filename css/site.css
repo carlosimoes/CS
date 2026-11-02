@@ -181,8 +181,8 @@ h3 { font-size: 17px; line-height: 1.4; }
 @media (max-width: 560px) { .ledger td { white-space: normal; } .ledger td:nth-child(2), .ledger th:nth-child(2) { display: none; } }
 
 .section-intro { color: var(--ink-2); margin: calc(-1 * var(--s4)) 0 var(--s8); }
-.work-group + .work-group { margin-top: var(--s12); }
-.work-org { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s2) var(--s3); font-size: 18px; font-weight: 500; margin-bottom: var(--s4); }
+.work-group + .work-group { margin-top: var(--s20); padding-top: var(--s10); border-top: 1px solid var(--line); }
+.work-org { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s2) var(--s3); font-size: 18px; font-weight: 500; margin-bottom: var(--s6); }
 .work-org span { font-size: 15px; font-weight: 400; color: var(--ink-2); }
 .work-org .mono { margin-left: auto; font-size: 13px; }
 .cards-3 { grid-template-columns: repeat(3, 1fr); }
