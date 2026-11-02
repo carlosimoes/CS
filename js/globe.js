@@ -24,12 +24,26 @@
     dublin: [53.35, -6.26], london: [51.5, -0.12], madrid: [40.42, -3.7], berlin: [52.52, 13.4], stockholm: [59.33, 18.07],
     warsaw: [52.23, 21.01], newyork: [40.71, -74.0], toronto: [43.65, -79.38], saopaulo: [-23.55, -46.63], mexico: [19.43, -99.13],
     johannesburg: [-26.2, 28.05], dubai: [25.2, 55.27], bangalore: [12.97, 77.59], singapore: [1.35, 103.82], kualalumpur: [3.14, 101.69],
-    sydney: [-33.87, 151.21], tokyo: [35.68, 139.69]
+    sydney: [-33.87, 151.21], tokyo: [35.68, 139.69],
+    sanfrancisco: [37.77, -122.42], losangeles: [34.05, -118.24], chicago: [41.88, -87.63], vancouver: [49.28, -123.12],
+    bogota: [4.71, -74.07], lima: [-12.05, -77.04], buenosaires: [-34.6, -58.38], santiago: [-33.45, -70.67],
+    lagos: [6.52, 3.38], nairobi: [-1.29, 36.82], cairo: [30.04, 31.24], casablanca: [33.57, -7.59], istanbul: [41.01, 28.98],
+    riyadh: [24.71, 46.68], mumbai: [19.08, 72.88], delhi: [28.61, 77.21], beijing: [39.9, 116.4], shanghai: [31.23, 121.47],
+    hongkong: [22.32, 114.17], seoul: [37.57, 126.98], manila: [14.6, 120.98], jakarta: [-6.2, 106.85], bangkok: [13.76, 100.5],
+    melbourne: [-37.81, 144.96], perth: [-31.95, 115.86], auckland: [-36.85, 174.76], honolulu: [21.31, -157.86]
   };
   var routes = [['coimbra','utrecht'],['lisbon','toulouse'],['lisbon','espoo'],['lisbon','dublin'],['utrecht','london'],['utrecht','berlin'],
     ['utrecht','stockholm'],['utrecht','warsaw'],['coimbra','madrid'],['lisbon','newyork'],['newyork','toronto'],['lisbon','saopaulo'],
     ['newyork','mexico'],['lisbon','johannesburg'],['utrecht','dubai'],['dubai','bangalore'],['bangalore','singapore'],['singapore','kualalumpur'],
-    ['singapore','sydney'],['singapore','tokyo']];
+    ['singapore','sydney'],['singapore','tokyo'],
+    ['newyork','chicago'],['chicago','sanfrancisco'],['sanfrancisco','vancouver'],['sanfrancisco','losangeles'],['losangeles','honolulu'],
+    ['honolulu','tokyo'],['honolulu','auckland'],['sanfrancisco','tokyo'],['mexico','bogota'],['bogota','lima'],['lima','santiago'],
+    ['saopaulo','buenosaires'],['buenosaires','santiago'],['saopaulo','lagos'],['lisbon','casablanca'],['casablanca','lagos'],
+    ['lagos','nairobi'],['nairobi','johannesburg'],['cairo','nairobi'],['istanbul','cairo'],['berlin','istanbul'],['istanbul','riyadh'],
+    ['riyadh','mumbai'],['mumbai','delhi'],['delhi','beijing'],['beijing','seoul'],['seoul','tokyo'],['shanghai','tokyo'],
+    ['hongkong','shanghai'],['hongkong','manila'],['bangkok','hongkong'],['kualalumpur','jakarta'],['jakarta','perth'],
+    ['perth','melbourne'],['melbourne','sydney'],['sydney','auckland'],['bangalore','mumbai'],['bangkok','singapore'],
+    ['johannesburg','perth'],['tokyo','vancouver'],['london','newyork'],['madrid','saopaulo'],['dubai','singapore'],['manila','sydney']];
   var arcs = routes.map(function (r) {
     var a = vec(C[r[0]][0], C[r[0]][1]), b = vec(C[r[1]][0], C[r[1]][1]);
     var om = Math.acos(Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1] + a[2] * b[2])));
@@ -91,12 +105,12 @@
     var n = arcs.length;
     ctx.lineCap = 'round';
     for (var i = 0; i < n; i++) {
-      var start = (i / n) * 0.82, t = Math.max(0, Math.min(1, (prog - start) / 0.12));
+      var start = (i / n) * 0.86, t = Math.max(0, Math.min(1, (prog - start) / 0.1));
       if (t <= 0) continue;
       var a = arcs[i], end = Math.max(1, Math.round(t * 48)), prev = proj(a[0], cr, sr, ct, st);
       for (var k = 1; k <= end; k++) {
         var cur = proj(a[k], cr, sr, ct, st), vis = Math.max(0, Math.min(1, (Math.min(prev[2], cur[2]) + 0.25) / 0.5));
-        var al = 0.12 + 0.88 * vis;
+        var al = 0.3 + 0.7 * vis;
         ctx.strokeStyle = 'rgba(61,220,151,' + (0.16 * al).toFixed(3) + ')'; ctx.lineWidth = 5;
         ctx.beginPath(); ctx.moveTo(prev[0], prev[1]); ctx.lineTo(cur[0], cur[1]); ctx.stroke();
         ctx.strokeStyle = 'rgba(170,255,215,' + (0.9 * al).toFixed(3) + ')'; ctx.lineWidth = 1.4;
@@ -109,7 +123,7 @@
     }
   }
   function dot(p, r) {
-    var al = Math.max(0.1, Math.min(1, (p[2] + 0.25) / 0.5));
+    var al = Math.max(0.3, Math.min(1, (p[2] + 0.25) / 0.5));
     ctx.fillStyle = 'rgba(61,220,151,' + (0.25 * al).toFixed(3) + ')';
     ctx.beginPath(); ctx.arc(p[0], p[1], r * 2.4, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = 'rgba(220,255,238,' + al.toFixed(3) + ')';
