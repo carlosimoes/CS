@@ -229,8 +229,6 @@ details[open] > summary.work-org { padding-bottom: var(--s4); }
 details.work-group > .cards { padding: 0 var(--s6) var(--s6); }
 @media (max-width: 600px) { summary.work-org { padding: var(--s4); } details.work-group > .cards { padding: 0 var(--s4) var(--s4); } }
 
-/* Rotating particle globe behind the hero */
-.globe { position: absolute; z-index: -1; left: 50%; top: 480px; width: min(1200px, 100vw); height: 820px; transform: translateX(-50%); pointer-events: none; -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
-.hero .ledger { margin-top: 400px; }
+/* Rotating particle globe, fixed behind the whole page */
+.globe { position: fixed; z-index: -1; inset: 0; width: 100vw; height: 100vh; height: 100lvh; pointer-events: none; opacity: 0.5; }
 .hero-copy { position: relative; }
-@media (max-width: 720px) { .globe { top: 520px; height: 560px; } .hero .ledger { margin-top: 260px; } }
