@@ -1,1066 +1,391 @@
-<?php
-if($_POST["submit"]) {
-	$recipient="simoes.cmas@gmail.com"; //Enter your mail address
-	$subject=$_POST["subjecttext"]; //Subject 
-	$subject=$subject + "website"
-    $sender=$_POST["nametext"];
-    $senderEmail=$_POST["emailtext"];
-    $message=$_POST["message"];
-    $mailBody="Name: $sender\nEmail Address: $senderEmail\n\nMessage: $message";
-    mail($recipient, $subject, $mailBody);
-    sleep(1);
-}
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carlos Simões · Lead AI</title>
+  <meta name="description" content="Carlos Simões designs, builds and leads AI that runs in production. Lead AI at Unit4, previously Airbus, Nokia and Accenture.">
+  <meta name="author" content="Carlos Simões">
+  <link rel="canonical" href="https://carlosimoes.github.io/CS/">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)">
 
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Carlos Simões</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Carlos Simões">
+  <meta property="og:title" content="Carlos Simões · Lead AI">
+  <meta property="og:description" content="I design, build and lead AI that runs in production. Lead AI at Unit4, previously Airbus, Nokia and Accenture.">
+  <meta property="og:url" content="https://carlosimoes.github.io/CS/">
+  <meta property="og:image" content="https://carlosimoes.github.io/CS/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Carlos Simões, Lead AI. AI engineering lead and architect.">
+  <meta property="profile:first_name" content="Carlos">
+  <meta property="profile:last_name" content="Simões">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carlos Simões · Lead AI">
+  <meta name="twitter:description" content="I design, build and lead AI that runs in production.">
+  <meta name="twitter:image" content="https://carlosimoes.github.io/CS/images/og-image.png">
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/site.css?v=10">
+  <script>document.documentElement.classList.add("js")</script>
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Carlos Simões",
+    "jobTitle": "Lead AI",
+    "worksFor": { "@type": "Organization", "name": "Unit4" },
+    "address": { "@type": "PostalAddress", "addressCountry": "PT" },
+    "email": "mailto:simoes.cmas@gmail.com",
+    "url": "https://carlosimoes.github.io/CS/",
+    "image": "https://carlosimoes.github.io/CS/images/about.webp",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Instituto Superior Técnico" },
+      { "@type": "CollegeOrUniversity", "name": "University of Coimbra" }
+    ],
+    "knowsAbout": ["Generative AI", "Document AI", "RAG", "Agentic workflows", "LLM evaluation", "AI governance", "Azure"],
+    "sameAs": ["https://linkedin.com/in/cmasimoes", "https://github.com/carlosimoes"]
+  }
+  </script>
+</head>
+<body>
+  <canvas class="globe" aria-hidden="true"></canvas>
+  <a class="skip" href="#main">Skip to content</a>
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="wordmark" href="#main">Carlos Simões</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#experience">Experience</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-small" href="cv/Carlos_Simoes_CV_AI.pdf" download>Download CV</a>
+      </nav>
+    </div>
+  </header>
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Lead AI at Unit4 · Remote, Portugal</p>
+        <h1 id="hero-title">I design, build and lead AI that runs in production</h1>
+        <p class="lede">At Unit4 I architect the platform, build the systems and lead the team that delivers them, with 10 use cases live across Finance, Sales Ops, People and Customer Success. Before that: GenAI at Airbus, NLP at Nokia and data science at Accenture.</p>
+        <div class="actions">
+          <a class="btn" href="cv/Carlos_Simoes_CV_AI.pdf" download>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            Download CV
+          </a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/cmasimoes" rel="me noopener">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Carlos Simões</a></h1>
-				<span class="position"><a href="#" >Eletrical and Computer Engineer</a> in Portugal</span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<!--<li><a href="#" data-nav-section="services">Services</a></li>-->
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="work">Work</a></li>
-						<li><a href="#" data-nav-section="blog">Future</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-					</ul>
-				</div>
-			</nav>
+      <figure class="ledger" aria-labelledby="ledger-cap">
+        <figcaption id="ledger-cap">
+          <span>Capability map</span>
+          <span class="mono muted">2018 – now</span>
+        </figcaption>
+        <table>
+          <thead>
+            <tr><th scope="col">Capability</th><th scope="col">Applied to</th><th scope="col" class="num">Where</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Architecture, infrastructure</td><td>Shared AI platform, from scratch</td><td class="num">Unit4</td></tr>
+            <tr><td>Document AI, OCR + LLM</td><td>Audit, expenses, contracts</td><td class="num">Unit4</td></tr>
+            <tr><td>Data agents</td><td>Snowflake insight agent</td><td class="num">Unit4</td></tr>
+            <tr><td>Validation, reconciliation</td><td>Payroll in 22 countries</td><td class="num">Unit4</td></tr>
+            <tr><td>RAG, knowledge graphs</td><td>Manufacturing assistant</td><td class="num">Airbus</td></tr>
+            <tr><td>NER and anonymisation</td><td>F1 +20–35%</td><td class="num">Airbus</td></tr>
+            <tr><td>Drift detection, clustering</td><td>Quality non-conformities</td><td class="num">Airbus</td></tr>
+            <tr><td>NLP, chatbots</td><td>Global chatbot, +20 pp</td><td class="num">Nokia</td></tr>
+            <tr><td>Recommender systems</td><td>Career development</td><td class="num">Nokia</td></tr>
+            <tr><td>Predictive ML, segmentation</td><td>Banking campaigns</td><td class="num">Accenture</td></tr>
+            <tr><td>Computer vision, 3D</td><td>Stereo depth, segmentation</td><td class="num">ISR</td></tr>
+            <tr><td>Gaze and pose tracking</td><td>IEEE paper</td><td class="num">ISR</td></tr>
+            <tr><td>Deep learning, CNNs</td><td>Eye-image classification</td><td class="num">MSc</td></tr>
+            <tr><td>Robotics, optimisation</td><td>Navigation, ACO, A*</td><td class="num">MSc</td></tr>
+          </tbody>
+        </table>
+        <p class="trace">enterprise software, aerospace, telecom, banking, robotics research</p>
+      </figure>
+    </section>
 
-			<div class="colorlib-footer">
-				<p class="active"><a href="https://github.com/carlosimoes" target="_blank">GitHub</a> <a><i class="icon-github"></i></a></p>
-				<p class="active"><a href="https://linkedin.com/in/cmasimoes" target="_blank"> Linkedin </a> <a><i class="icon-linkedin2"></i></a></p>
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Initial template used from <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
+    <section id="work" class="section wrap" aria-labelledby="work-title">
+      <h2 id="work-title">Work</h2>
+      <p class="section-intro">Every project, what it does and what it runs on</p>
+      <details class="work-group">
+        <summary class="work-org">Unit4 <span>Lead AI</span><span class="work-count mono">8 projects</span><svg class="i chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="cards cards-3">
+          <article class="card card-wide">
+            <h4>Shared AI platform, built from scratch</h4>
+            <p class="result">Architecture and infrastructure by me · all solutions run on it</p>
+            <p>I designed the architecture and implemented the infrastructure myself, from an empty repo to the platform every Unit4 AI solution runs on: environments, containers, identity and access, deployment and monitoring. Every solution is traced for extraction accuracy, answer quality, errors, latency and cost, and goes through code, architecture and security review. Still evolving: Prometheus metrics and Grafana dashboards are the latest addition.</p>
+            <p class="trace">Microsoft Azure · infrastructure as code (Bicep, Terraform) · Docker · Langfuse · Prometheus · Grafana</p>
+          </article>
+          <article class="card">
+            <h4>Audit template completion</h4>
+            <p class="result">Finance · in production</p>
+            <p>Reads audit documents and fills the audit templates automatically, with a review step before anything is final. One of three Finance solutions I shipped as sole engineer.</p>
+            <p class="trace">Microsoft Azure · OCR · LLM extraction · human review</p>
+          </article>
+          <article class="card">
+            <h4>Expense matching</h4>
+            <p class="result">Finance · in production</p>
+            <p>Matches expenses against their supporting documents on the same OCR, LLM extraction and review foundation.</p>
+            <p class="trace">Microsoft Azure · OCR · LLM extraction · document matching</p>
+          </article>
+          <article class="card">
+            <h4>Contract validation</h4>
+            <p class="result">Finance · in production · est. 720 h/yr saved across the 3</p>
+            <p>Validates contracts against CRM and enterprise databases and flags what does not match.</p>
+            <p class="trace">Microsoft Azure · OCR · LLM extraction · CRM and database integration</p>
+          </article>
+          <article class="card">
+            <h4>Sales rule validation</h4>
+            <p class="result">Sales Ops · in production</p>
+            <p>Checks sales deals against the company&#x27;s sales rules, built and run with my team.</p>
+            <p class="trace">Microsoft Azure · rule validation</p>
+          </article>
+          <article class="card">
+            <h4>Payroll reconciliation in 22 countries</h4>
+            <p class="result">People · in production</p>
+            <p>Reconciles payroll data across 22 countries and surfaces the differences for the People team.</p>
+            <p class="trace">Microsoft Azure · data reconciliation</p>
+          </article>
+          <article class="card">
+            <h4>Snowflake insight agent</h4>
+            <p class="result">In production · team of 10, 7 use cases, est. 7,800+ h/yr saved</p>
+            <p>An agent that answers business questions over Snowflake data.</p>
+            <p class="trace">Microsoft Azure · agents · Snowflake</p>
+          </article>
+          <article class="card card-wide">
+            <h4>AI discovery and adoption</h4>
+            <p class="result">21 opportunities · 10 prioritised · ~600 people enabled</p>
+            <p>Ran discovery workshops with directors across Finance, Sales Ops, People and Customer Success: 21 opportunities mapped, 10 prioritised by effort and business case. Ran AI enablement for about 600 people and screen incoming AI requests.</p>
+            <p class="trace">Business cases · build vs buy · Copilot licensing · governance</p>
+          </article>
+        </div>
+      </details>
+      <details class="work-group">
+        <summary class="work-org">Airbus <span>Tech Lead – Data Scientist</span><span class="work-count mono">4 projects</span><svg class="i chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="cards cards-2">
+          <article class="card">
+            <h4>GenAI manufacturing assistant</h4>
+            <p class="result">In production</p>
+            <p>In the Central AI team, built and deployed GenAI solutions that assist manufacturing processes.</p>
+            <p class="trace">GCP · RAG · knowledge graphs · agentic workflows</p>
+          </article>
+          <article class="card">
+            <h4>Data anonymisation pipeline</h4>
+            <p class="result">F1 +20–35%</p>
+            <p>Industrialised a pipeline that anonymises documents across file types and languages.</p>
+            <p class="trace">AWS · spaCy · NER · MLflow</p>
+          </article>
+          <article class="card">
+            <h4>Drift detection and quality clustering</h4>
+            <p class="result">Manufacturing quality</p>
+            <p>Semantic-similarity drift detection, and clustering of quality non-conformities for predictive maintenance.</p>
+            <p class="trace">Embeddings · clustering · text similarity</p>
+          </article>
+          <article class="card">
+            <h4>GenAI proofs of concept</h4>
+            <p class="result">Global Business Services</p>
+            <p>With Global Business Services: cross-border material specification matching, copywriting aids and HR support.</p>
+            <p class="trace">Clustering · text similarity · GenAI</p>
+          </article>
+        </div>
+      </details>
+      <details class="work-group">
+        <summary class="work-org">Nokia <span>Machine Learning & AI Engineer</span><span class="work-count mono">2 projects</span><svg class="i chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="cards cards-2">
+          <article class="card">
+            <h4>Global chatbot accuracy</h4>
+            <p class="result">+20 pp answer accuracy</p>
+            <p>Developed and deployed NLP models that raised the global chatbot&#x27;s answer accuracy, benchmarked with QBox.</p>
+            <p class="trace">Microsoft Azure · NLP · text similarity · QBox</p>
+          </article>
+          <article class="card">
+            <h4>Career development recommender</h4>
+            <p class="result">Recommendation system</p>
+            <p>Recommends career development paths to employees.</p>
+            <p class="trace">Similarity · clustering</p>
+          </article>
+        </div>
+      </details>
+      <details class="work-group">
+        <summary class="work-org">Accenture <span>Data Scientist</span><span class="work-count mono">1 project</span><svg class="i chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="cards cards-3">
+          <article class="card card-wide">
+            <h4>Banking campaign prediction</h4>
+            <p class="result">External banking clients</p>
+            <p>Predictive models for banking clients that forecast customer response to campaigns, plus audience segmentation for personalised advertising.</p>
+            <p class="trace">Python · scikit-learn · clustering · text analysis · Hadoop · NoSQL · AWS · Power BI · Qlik Sense</p>
+          </article>
+        </div>
+      </details>
+      <details class="work-group">
+        <summary class="work-org">ISR Lisboa and IST <span>Research</span><span class="work-count mono">2 projects</span><svg class="i chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="cards cards-2">
+          <article class="card">
+            <h4>3D visual focus of attention</h4>
+            <p class="result">IEEE publication</p>
+            <p>Estimates which object a person is looking at from 3D head and gaze pose, using stereo depth, 3D reconstruction and panoptic segmentation, for human-robot interaction. Published at an IEEE conference.</p>
+            <p class="trace">Computer vision · stereo · 3D reconstruction · pose and gaze tracking · panoptic segmentation</p>
+          </article>
+          <article class="card">
+            <h4>Eye-image classification</h4>
+            <p class="result">Deep learning</p>
+            <p>A deep learning system that classifies people from images of their eyes.</p>
+            <p class="trace">Python · TensorFlow · CNNs</p>
+          </article>
+        </div>
+      </details>
+    </section>
 
-			</div>
+    <section id="approach" class="section wrap" aria-labelledby="approach-title">
+      <h2 id="approach-title">How I run AI in a company</h2>
+      <div class="cols">
+        <div>
+          <h3>Discovery and prioritisation</h3>
+          <p>Workshops with directors and department leaders across Finance, Sales Ops, People and Customer Success mapped 21 opportunities. Effort estimates and business cases narrowed them to 10, each one marked as AI, automation or process redesign.</p>
+        </div>
+        <div>
+          <h3>Platform, evaluation and governance</h3>
+          <p>One shared platform that I designed and built, with every solution traced and measured on accuracy, quality, latency and cost. I screen incoming AI requests, run security reviews and analyse Copilot consumption and licensing.</p>
+        </div>
+        <div>
+          <h3>People and adoption</h3>
+          <p>Defined the AI Engineer role, ran technical interviews and made the final hiring decisions. I onboard and mentor engineers, and have run AI enablement sessions for about 600 people across departments.</p>
+        </div>
+      </div>
+    </section>
 
-		</aside>
+    <section id="experience" class="section wrap" aria-labelledby="exp-title">
+      <h2 id="exp-title">Experience</h2>
+      <ol class="timeline steps">
+        <li class="rail" aria-hidden="true"><span class="rail-glow"></span></li>
+        <li>
+          <p class="when mono">Nov 2025 – present</p>
+          <h3>Lead AI <span class="org">Unit4 · Remote, Portugal</span></h3>
+          <p>Leads AI delivery from discovery to production across Finance, Sales Ops, People and Customer Success. Designed and built the shared AI platform from scratch, and owns engineering standards and hiring for the AI team.</p>
+        </li>
+        <li>
+          <p class="when mono">May 2023 – Nov 2025</p>
+          <h3>Tech Lead – Data Scientist <span class="org">Airbus · Portugal</span></h3>
+          <p>Built GenAI solutions on GCP (RAG, knowledge graphs, agentic workflows) and an anonymisation pipeline on AWS. Led proofs of concept with Global Business Services, and built drift detection and clustering of quality non-conformities.</p>
+        </li>
+        <li>
+          <p class="when mono">Nov 2021 – May 2023</p>
+          <h3>Machine Learning &amp; AI Engineer <span class="org">Nokia · Lisbon</span></h3>
+          <p>Deployed NLP models on Azure that raised the global chatbot's answer accuracy by 20 percentage points. Built a career development recommendation system.</p>
+        </li>
+        <li>
+          <p class="when mono">Mar 2021 – Nov 2021</p>
+          <h3>Data Scientist <span class="org">Accenture · Lisbon</span></h3>
+          <p>Predictive models and audience segmentation for banking clients, with results presented in Power BI and Qlik Sense.</p>
+        </li>
+        <li class="earlier">
+          <p class="when mono">Earlier</p>
+          <p>MSc Electrical and Computer Engineering, Instituto Superior Técnico (2021), with thesis research at ISR Lisboa. BSc Electrical and Computer Engineering, University of Coimbra (2018).</p>
+        </li>
+      </ol>
+    </section>
 
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li style="background-image: url(images/img_bg_1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I'm Carlos</h1>
-						   					<h2>Welcome to my World!</a></h2>
-												<p><a  href="cv/CarlosSimoescv.pdf" download="CarlosSimoescv.pdf" class="btn btn-primary btn-learn">Download CV<i class="icon-download4"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(images/img_bg_2.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-												<h2 style="color:black "> <strong>Eletrical and Computer Engineer</strong> <br></h2>
-											   <h2 style="color:black; "> <strong>A student of the mind</strong> <br></h2>
-											   <h2 style="color:black; "> <strong></strong> <br></h2>
-											   <h2 style="color: black"> <strong></strong><br></h2>
-											   <h2 style="color:black; "> <strong></strong> <br></h2>
-											   <h2 style="color: black"> <strong></strong><br></h2>
-											   <h2 style="color:black; "> <strong></strong> <br></h2>
-											   <h2 style="color: black"> <strong></strong><br></h2>
-												<!--<p><a class="btn btn-primary btn-learn">View Portfolio <i class="icon-briefcase3"></i></a></p>-->
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				  	</ul>
-			  	</div>
-			</section>
+    <section id="expertise" class="section wrap" aria-labelledby="skills-title">
+      <h2 id="skills-title">Core expertise and tools</h2>
+      <ul class="sponsors" aria-label="Tools and platforms">
+          <li class=""><img src="images/brands/azure.svg" alt="Microsoft Azure"><span>Microsoft Azure</span></li>
+          <li class=""><img src="images/brands/googlecloud.svg" alt="Google Cloud"><span>Google Cloud</span></li>
+          <li class="wm"><img src="images/brands/aws.svg" alt="AWS"></li>
+          <li class="wm"><img src="images/brands/docker.svg" alt="Docker"></li>
+          <li class=""><img src="images/brands/bicep.svg" alt="Bicep"><span>Bicep</span></li>
+          <li class="wm"><img src="images/brands/terraform.svg" alt="Terraform"></li>
+          <li class=""><img src="images/brands/azuredevops.svg" alt="Azure DevOps"><span>Azure DevOps</span></li>
+          <li class="wm"><img src="images/brands/git.svg" alt="Git"></li>
+          <li class=""><img src="images/brands/githubcopilot.svg" alt="GitHub Copilot"><span>GitHub Copilot</span></li>
+          <li class="wm"><img src="images/brands/claude.svg" alt="Claude Code"></li>
+          <li class=""><img src="images/brands/prometheus.svg" alt="Prometheus"><span>Prometheus</span></li>
+          <li class=""><img src="images/brands/grafana.svg" alt="Grafana"><span>Grafana</span></li>
+          <li class="wm"><img src="images/brands/langfuse.svg" alt="Langfuse"></li>
+          <li class=""><img src="images/brands/mlflow.svg" alt="MLflow"><span>MLflow</span></li>
+          <li class="wm"><img src="images/brands/snowflake.svg" alt="Snowflake"></li>
+          <li class=""><img src="images/brands/sharepoint.svg" alt="SharePoint"><span>SharePoint</span></li>
+          <li class=""><img src="images/brands/powerbi.svg" alt="Power BI"><span>Power BI</span></li>
+          <li class="wm"><img src="images/brands/qlik.svg" alt="Qlik Sense"></li>
+          <li class=""><img src="images/brands/hadoop.svg" alt="Hadoop"><span>Hadoop</span></li>
+          <li class=""><img src="images/brands/python.svg" alt="Python"><span>Python</span></li>
+          <li class="wm"><img src="images/brands/pytorch.svg" alt="PyTorch"></li>
+          <li class=""><img src="images/brands/tensorflow.svg" alt="TensorFlow"><span>TensorFlow</span></li>
+          <li class=""><img src="images/brands/scikitlearn.svg" alt="scikit-learn"><span>scikit-learn</span></li>
+          <li class="wm"><img src="images/brands/spacy.svg" alt="spaCy"></li>
+          <li class="wm"><img src="images/brands/langchain.svg" alt="LangChain"></li>
+          <li class="wm"><img src="images/brands/pandas.svg" alt="pandas"></li>
+          <li class=""><img src="images/brands/numpy.svg" alt="NumPy"><span>NumPy</span></li>
+          <li class=""><img src="images/brands/sql.svg" alt="SQL"><span>SQL</span></li>
+      </ul>
+      <dl class="skills">
+        <div><dt>Leadership and delivery</dt><dd>Stakeholder discovery, solution architecture, team leadership, hiring, build vs buy, AI governance, cost and licensing</dd></div>
+        <div><dt>AI engineering</dt><dd>Document AI, RAG, agentic workflows, knowledge graphs, NLP, embeddings, OCR, LLM evaluation</dd></div>
+        <div><dt>Architecture and infrastructure</dt><dd>Solution architecture, cloud infrastructure, infrastructure as code (Bicep, Terraform), Docker, identity and access, REST APIs on Microsoft Azure, GCP and AWS</dd></div>
+        <div><dt>Evaluation and observability</dt><dd>Langfuse, Prometheus, Grafana, MLflow</dd></div>
+        <div><dt>Programming and frameworks</dt><dd>Python, SQL, scikit-learn, spaCy, LangChain, LightRAG, PyTorch, TensorFlow</dd></div>
+        <div><dt>Enterprise integrations</dt><dd>CRM systems, SharePoint, ServiceNow, Snowflake, Copilot Studio</dd></div>
+        <div><dt>Development tools</dt><dd>Git, Azure DevOps, Claude Code, GitHub Copilot</dd></div>
+        <div><dt>Languages</dt><dd>Portuguese (native), English (C2, EF SET)</dd></div>
+      </dl>
+    </section>
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Me</span>
-										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p><strong>Hi I'm Carlos Simões</strong> an enthusiastic engineer eager to learn and make a positive impact on the world through work and life. I strongly believe in technology as an enabler of change, and would like to help steer this change in the right direction.</p>
-										<p>My interests include:</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-bulb"></i></span>
-										<h3>Artificial Intelligence</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="services color-2">
-										<span class="icon2"><i class="icon-eye"></i></span>
-										<h3>Computer Vision</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="services color-3">
-										<span class="icon2"><i class="icon-reddit"></i></span>
-										<h3>Robotics</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-4">
-										<span class="icon2"><i class="icon-phone3"></i></span>
-										<h3>Biomedical applications</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-group-outline"></i></span>
-										<h3>Machine Learning</h3>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<!--<div class="hire">
-										<h2>I am happy to know you <br>that 300+ projects done sucessfully!</h2>
-										<a href="#" class="btn-hire">Hire me</a>
-									</div>-->
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+    <section id="research" class="section wrap" aria-labelledby="research-title">
+      <h2 id="research-title">Research and early projects</h2>
+      <article class="pub">
+        <h3><a href="https://ieeexplore.ieee.org/document/9784797" rel="noopener">3D Estimation of Visual Focus of Attention</a></h3>
+        <p>IEEE International Conference. MSc thesis research at ISR, Instituto de Sistemas e Robótica: estimating which object a person is looking at from 3D head and gaze pose, using stereo depth and panoptic segmentation, to improve human-robot interaction.</p>
+      </article>
+      <details class="early">
+        <summary>University projects</summary>
+        <ul>
+          <li><strong>Travelling salesman with ant colony optimisation.</strong> Implemented ACO in Java to find the shortest cycle through every node of a weighted graph.</li>
+          <li><strong>Airline scheduling and routing.</strong> An A* search that finds the daily schedule and routing of a fleet that maximises profit. Python.</li>
+          <li><strong>Flexible robot arm joint control.</strong> Plant model and controller for a flexible joint, plus direct and inverse kinematics. MATLAB.</li>
+          <li><strong>Navigation strategies for mobile robots.</strong> Path planning and obstacle avoidance. MATLAB.</li>
+          <li><strong>Smart office illumination.</strong> Real-time lighting control from occupancy and time of day, on Arduino and Raspberry Pi. C++ and MATLAB.</li>
+        </ul>
+      </details>
+    </section>
 
+    <section id="contact" class="section wrap contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="lede">Open to conversations about Head of AI roles.</p>
+      <ul class="links">
+        <li><a href="mailto:simoes.cmas@gmail.com"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>simoes.cmas@gmail.com</a></li>
+        <li><a href="https://linkedin.com/in/cmasimoes" rel="me noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>in/cmasimoes</a></li>
+        <li><a href="https://github.com/carlosimoes" rel="me noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>carlosimoes</a></li>
+        <li><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Remote, Portugal</span></li>
+      </ul>
+      <img class="portrait" src="images/about.webp" width="320" height="320" alt="Portrait of Carlos Simões" loading="lazy" decoding="async">
+    </section>
+  </main>
 
-			<!--
-			<section class="colorlib-services" data-section="services">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">What I do?</span>
-							<h2 class="colorlib-heading">Here are some of my expertise</h2>
-						</div>
-					</div>
-					<div class="row row-pt-md">
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-1">
-								<span class="icon">
-									<i class="icon-bulb"></i>
-								</span>
-								<div class="desc">
-									<h3>Innovative Ideas</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-2">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Software</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-3">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>Application</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-4">
-								<span class="icon">
-									<i class="icon-layers2"></i>
-								</span>
-								<div class="desc">
-									<h3>Graphic Design</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-5">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Software</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-6">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>Application</h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		-->
-			
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-					</div>
-					<!--<div class="row">
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="309" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Cups of coffee</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="356" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Projects</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="30" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Clients</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="10" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Partners</span>
-						</div>
-					</div>-->
-				</div>
-			</div>
+  <footer>
+  <div class="foot wrap">
+    <p class="muted">© 2026 Carlos Simões</p>
+    <a class="muted" href="cv/Carlos_Simoes_CV_AI.pdf" download>CV (PDF)</a>
+  </div>
+  <p class="foot-mark" aria-hidden="true">Carlos Simões</p>
+  </footer>
 
-			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Specialty</span>
-							<h2 class="colorlib-heading animate-box">My Skills</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<p>This hard skills were developed through the projects, personal motivation, external courses and internships.</p>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Python</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-								    <span>90%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>C++</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Matlab</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="85"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-								    <span>85%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Git</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								    <span>75%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>MySQL</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>PHP, HTML, CSS</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="60"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-								    <span>60%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Java</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-7" role="progressbar" aria-valuenow="60"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-								    <span>60%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Education</span>
-							<h2 class="colorlib-heading animate-box">Education</h2>
-						</div>
-					</div>
-					<!-- colocar aqui timeline-->
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-					        <!-- <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="#">Full Stack Developer</a> <span>2017-2018</span></h2>
-					                  <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>
-					               </div>
-					            </div>
-					         </article>-->
-
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Electrical and Computer Engineering - Master's degree</a> <span>2018-2020</span></h2>
-					                  <p>[IST] Instituto Superior Técnico, Portugal</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Electrical and Computer Engineering - Bachelor's degree</a> <span>2015-2018</span></h2>
-					                  <p>University of Coimbra, Portugal</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Technological Specialization Course in Energy and Automation</a> <span>2014-2015</span></h2>
-					                  <p>[ISEC] Instituto Superior de Engenharia de Coimbra, Portugal</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Professional Course in Renewable Energy</a> <span>2011-2014</span></h2>
-					                  <p>High School Secondary Education at Avelar Brotero, Portugal</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
-
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Experience</span>
-							<h2 class="colorlib-heading animate-box">Work Experience</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-					         <!--<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-
-					               <div class="timeline-label">
-					                  <h2><a href="#">Full Stack Developer</a> <span>2017-2018</span></h2>
-					                  <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>
-					               </div>
-					            </div>
-					         </article>-->
-							 <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Machine Learning & AI Engineer </a> <span>2020-2021</span></h2>
-					                  <p>Nokia </p>
-										<p>- Developed and evaluated machine learning models and training data to improve performance and quality.</p>
-										<p>- Collaborated with cross-functional teams to understand requirements and implement them into technical specifications and features for use in chatbots.</p>
-                    					<p>- Improved the accuracy of the company's chatbot by 20\% through the use of machine learning and NLP techniques.</p>
-					               </div>
-					            </div>
-					         </article>
-
-
-							 <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#"> AI Academy </a> <span>2020-2021</span></h2>
-					                  <p>Accenture </p>
-									  <p> Capable in Big Data technologies such as Hadoop and NoSQL.</p>
-									  <p> Skilled in data analysis using Python, Pandas, numpy, Scikit-learn, and deep learning.</p>
-									  <p> Experience with data visualization tools such as Excel, PowerBi, and Qlik Sense.</p>
-									  <p> Familiar with ingestion and processing of large amounts of data on AWS.</p>
-									</div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">3D Estimation of Visual Focus of Attention for Human-Robot Interaction </a> <span>2020-2021</span></h2>
-					                	<p>Institute for Systems and Robotics (ISR-Lisboa) </p>
-										<p>For my thesis, I developed an algorithm that captures the Visual Focus of Attention from the gaze and head pose with the aim of improving Human-Robot Interaction. The algorithm used stereo systems to estimate depth and perform 3D reconstruction of the environment. We then used the 3D head and gaze pose to calculate and track the object that a person is interested in. To aid in environment classification, we employed panoptic segmentation to identify objects in the scene. The results of our work were published in a <a href="https://ieeexplore.ieee.org/document/9784797">Paper</a>. This project allowed us to investigate the use of stereo systems and 3D pose estimation for enhanced human-robot interaction and gaze tracking.</p>
-										
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-									   <h2><a href="#">General Coordinator of the Pedagogy Department</a> <span>2017-2018</span></h2>
-									   <p>Núcleo de Estudantes de Engenharia Eletrotécnica e Computadores da Associação Académica de Coimbra, Portugal</p>
-					                  <p>Implementation of the "Delegates of the Year" project</p>
-									  <p>Awareness and pedagogical training of teachers and students</p>
-									  <p>Conducting pedagogical surveys and Pedagogical Forum</p>
-									  <p>Meetings for discussion and curriculum reform of MIEEC</p>
-									  <p>Direct and continuous contact with the DEEC community and management</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Internship Big Mat</a> <span>2014-2014</span></h2>
-					                  <p>Coimbra, Portugal</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-									   <h2><a href="#">Internship Installatiebedrijf Andriessen</a> <span>2014-2014</span></h2>
-									   <p>IJsselstein, Utrecht, Netherlands</p>
-					                  <p>Design and drawing in AutoCAD 3D and 2D for the BMV Veiden project. In charge of some additional work for other projects</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
-
-			<section class="colorlib-work" data-section="work">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Work</span>
-							<h2 class="colorlib-heading animate-box">Projects</h2>
-						</div>
-					</div>
-					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<p class="work-menu"><span><a data-nav-section="work" class="active">Projects</a></span></p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingOne">
-									        <h4 class="panel-title">
-									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Master Degree Thesis
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									         <div class="panel-body">
-										      	<p>For my thesis, I developed an algorithm that captures the Visual Focus of Attention from the gaze and head pose with the aim of improving Human-Robot Interaction. The algorithm used stereo systems to estimate depth and perform 3D reconstruction of the environment. We then used the 3D head and gaze pose to calculate and track the object that a person is interested in. To aid in environment classification, we employed panoptic segmentation to identify objects in the scene. The results of our work were published in a paper. This project allowed us to investigate the use of stereo systems and 3D pose estimation for enhanced human-robot interaction and gaze tracking. </p>
-										      	</div>
-									         </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingbank">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsebank" aria-expanded="false" aria-controls="collapsebank">Predict Subscription to Bank 
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapsebank" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingbank">
-									        <div class="panel-body">
-									            <p>Developed an end-to-end platform that uses machine learning to predict whether customers will or will not subscribe to a bank program. The project included exploratory data analysis, model building and evaluation, and visualization of the results. Using <strong>Python, Pandas, Matplotlib, Sklearn and PowerBI</strong> </p>	
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headinggender">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsegender" aria-expanded="false" aria-controls="collapsegender">Gender Detection through Eyes Images 
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapsegender" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headinggender">
-									        <div class="panel-body">
-									            <p>Developed a gender recognition system using deep learning methods to scan eye images and determine the gender of the patient.} The system was able to accurately classify individuals as male or female. Using <strong>Python, Pandas, Numpy and Tensorflow</strong> </p>	
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingnine">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsenine" aria-expanded="false" aria-controls="collapsenine">Smart Office Illumination
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapsenine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingnine">
-									        <div class="panel-body">
-									            <p>Real-time control of a smart office illumination system using Arduinos and Raspberry Pi: Developed a system for real-time control of an office's illumination using Arduinos and Raspberry Pi. The system was able to automatically adjust the lighting levels in the office based on real-time information, such as the time of day and the presence of people in the room. The use of Arduinos and Raspberry Pi allowed for a low-cost and flexible solution that could be easily integrated into existing office infrastructure. Made in <strong> C++, MATLAB and Arduino</strong>.</p>	
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingeight">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseeight" aria-expanded="false" aria-controls="collapseeight">Artificial Intelligence
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseeight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight">
-									        <div class="panel-body">
-									            <p>Project that consists of two other project on the subject of Artificial Intelligence, this project were both made in <strong> Python</strong>.</p>	
-												<ul>
-													<li>Airline Scheduling And Routing (ASAR) problem: Developed and implemented an A* algorithm to solve the ASAR problem, which aims to maximize a company's profit by finding the optimal daily schedule and routing of its airplanes.</li>
-													<li>Fire detection in a museum: Addressed the problem of detecting fires in a museum, taking into account a fire propagation model and the uncertainty of the fire detectors. The project used artificial intelligence techniques to accurately detect fires and prevent damage to the museum's valuable artifacts.</li>
-												</ul>
-											</div>
-									    </div>
-									</div>
-									
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingteen">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseteen" aria-expanded="false" aria-controls="collapseteen">Travelling Salesman Problem
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingteen">
-									        <div class="panel-body">
-									            <p>The travelling sales problem (TSP) and the ant colony optimization (ACO) algorithm: Developed and implemented the ant colony optimization (ACO) algorithm to solve the travelling sales problem (TSP). The TSP aims to find the shortest cycle in a weighted graph that passes through all its nodes, and the ACO algorithm uses a simulation of ants laying down pheromone trails to find solutions to the problem. The project was implemented in Java.</p>	
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingseven">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseseven" aria-expanded="false" aria-controls="collapseseven">Voice Over IP
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseseven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingseven">
-									        <div class="panel-body">
-									            <p>Interactive voice response system (IVR) based on voice over IP (VoIP): Developed an IVR system using the voice over IP (VoIP) protocol. The project involved understanding and implementing the relevant VoIP protocols, and the system was built using Python and config files. The IVR system allowed for the creation of automated voice menus and interactions with users via phone calls. .</p>	
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingsix">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsesix" aria-expanded="false" aria-controls="collapsesix">Inverted Pendulum
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapsesix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsix">
-									        <div class="panel-body">
-									            <p>Linear state feedback control of an inverted pendulum: Developed a control system for an inverted pendulum using linear state feedback. The project involved the design and implementation of the control algorithms in MATLAB, and the system was able to accurately control the pendulum's motion and maintain its stability. The use of linear state feedback allowed for a simple and effective control solution. .</p>	
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Robotics
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									        <div class="panel-body">
-									            <p>Two Projects in the suject of <strong>Robotics, all made in MATLAB</strong>:</p>
-													<ul>
-														<li><strong>Direct and Inverse Kinematics</strong> Designed the plant model and the controller Control of a Flexible Robot Arm Joint: Developed control algorithms for a flexible robot arm joint, allowing for precise and accurate manipulation of the arm. The algorithms were able to account for the flexibility of the joint and its effect on the arm's motion, resulting in improved performance.</li>
-														<li><strong>Navigation Strategies for Mobile Robots</strong> Navigation strategies for mobile robots: Implemented various navigation strategies for mobile robots, including path planning and obstacle avoidance, to enable the robots to navigate complex environments. The project involved the development of algorithms and software to control the robots' motion and decision-making, and the resulting system allowed for robust and efficient navigation.</li>
-													</ul>
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingThree">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Robot Deslocation 
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									        <div class="panel-body">
-									            <p>Transferring a robot from point A to B using multiple algorithms to estimate the optimal route: Developed algorithms to guide a robot from one point to another, taking into account the robot's capabilities and the characteristics of the environment. The project involved the use of Matlab to implement and evaluate the algorithms, and the resulting system was able to find efficient and safe routes for the robot to follow.</p>	
-									        </div>
-									    </div>
-									</div>
-
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingFour">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Veterinary Hospital Database 
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-									        <div class="panel-body">
-									            <p>Veterinary hospital database and web application: Developed a database and web application for a veterinary hospital. The application allowed for the efficient storage, retrieval, and management of patient records and appointments. The web-based interface allowed for easy access to the database from any device with an internet connection. Using <strong>MySQL and PHP</strong> </p>	
-									        </div>
-									    </div>
-									</div>
-
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingFive">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Software to Manage a Parking Lot
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-									        <div class="panel-body">
-									            <p>Management of a car park using a graphic platform and database: Developed a system for managing a car park, including a graphic user interface and a database to store information about the cars and parking spaces. The project involved the use of C#, C/C++, and MSAccess, among other technologies, to implement the system's features. The system was able to accurately track the entry and exit of vehicles, and calculate the total amount to be paid based on the duration of the parking and any discounts.</p>	
-									        </div>
-									    </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- workparteliminate<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/img-1.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 01</a></h3>
-										<span>Website</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/img-2.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 02</a></h3>
-										<span>Animation</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-							<div class="project" style="background-image: url(images/img-3.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 03</a></h3>
-										<span>Illustration</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<div class="project" style="background-image: url(images/img-4.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 04</a></h3>
-										<span>Application</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/img-5.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 05</a></h3>
-										<span>Graphic, Logo</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/img-6.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Work 06</a></h3>
-										<span>Web Design</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>-->
-					<!--<div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
-						</div>
-					</div>-->
-			
-
-			<!--<section class="colorlib-blog" data-section="blog">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Read</span>
-							<h2 class="colorlib-heading">Recent Blog</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/blog-1.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>April 14, 2018 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">Renovating National Gallery</a></h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/blog-2.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>April 14, 2018 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">Wordpress for a Beginner</a></h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/blog-3.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-								<div class="desc">
-									<span><small>April 14, 2018 </small> | <small> Inspiration </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">Make website from scratch</a></h3>
-									<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
-						</div>
-					</div>
-				</div>
-			</section>-->
-			</section>
-			<section class="colorlib-blog" data-section="Future">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Hard skill Adquired and Interest to develop</span>
-							<h2 class="colorlib-heading">Hard Skills</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>Machine learning algorithms and libraries, such as TensorFlow, Keras, and scikit-learn.</p>
-									<p>Programming languages such as Python, matlab and C++</p>
-									<p>Data analysis and visualization tools, such as Pandas,Numpy and Matplotlib</p>
-									<p>Deep learning techniques, including convolutional neural networks (CNNs), recurrent neural networks (RNNs), Transformers.</p>
-									<p>Computer vision techniques, including image and video processing, object detection, and face recognition and GANs.</p>
-									<p>Familiarity with Linux operating systems and shell scripting.</p>
-								</div>
-							</div>
-						</div>
-				</section>
-			<section class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Get in Touch</span>
-							<h2 class="colorlib-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="MAILTO:simoes.cmas@gmail.com">simoes.cmas@gmail.com</a></p>
-								</div>
-							</div>
-
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>Portugal</p>
-								</div>
-							</div>
-						</div>
-						<!--<div class="col-md-7 col-md-push-1">
-							<div class="row">
-								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="mailto:simoes.cmas@gmail.com" method=”POST” enctype=”text/plain” name=”EmailForm”>
-										<div class="form-group">
-											<input type="text" class="form-control" id="nametext" name="nametext" placeholder="Name">
-										</div>
-										<div class="form-group">
-											<!-- <input type="text" class="form-control" placeholder="Email">
-
-											<input type="email" class="form-control" id="emailtext" name="emailtext" required>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" id="subjecttext" name="subjecttext" placeholder="Subject">
-										</div>
-										<div class="form-group">
-											<textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message" maxlength="6000" required></textarea>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
-										</div>
-									</form>
-									</div>
-								</div>
-								
-							</div>-->
-						</div>
-					</div> 
-			</section>
-
-			</div><!-- end:colorlib-main <input type="text" class="form-control" placeholder="Email">-->
-		</div><!-- end:container-wrap -->
-		</div><!-- end:colorlib-page -->
-		
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+  <script src="js/site.js?v=6" defer></script>
+  <script src="js/globe-data.js?v=2" defer></script>
+  <script src="js/globe.js?v=5" defer></script>
+</body>
 </html>
