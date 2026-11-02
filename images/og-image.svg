@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f7f6f2"/>
+<text x="96" y="150" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="30" fill="#5b5852">Lead AI at Unit4 · Coimbra, Portugal</text>
+<text x="96" y="260" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="88" font-weight="500" fill="#1c1b19">Carlos Simões</text>
+<text x="96" y="340" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="38" fill="#1c1b19">Taking enterprise AI from the discovery</text>
+<text x="96" y="390" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="38" fill="#1c1b19">workshop to production.</text>
+<line x1="96" y1="470" x2="1104" y2="470" stroke="#1c1b19" stroke-opacity="0.16"/>
+<circle cx="104" cy="521" r="6" fill="#0f6b5c"/>
+<text x="124" y="530" font-family="DejaVu Sans Mono, monospace" font-size="26" fill="#5b5852">10 use cases in production · Azure · GCP · AWS</text>
+</svg>
