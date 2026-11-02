@@ -98,14 +98,14 @@
             <tr><th scope="col">Capability</th><th scope="col">Applied to</th><th scope="col" class="num">Where</th></tr>
           </thead>
           <tbody>
-            <tr><td>Architecture, infrastructure</td><td>Shared AI platform, from scratch</td><td class="num"><span class="dot" title="In production"></span>Unit4</td></tr>
-            <tr><td>Document AI, OCR + LLM</td><td>Audit, expenses, contracts</td><td class="num"><span class="dot" title="In production"></span>Unit4</td></tr>
-            <tr><td>Data agents</td><td>Snowflake insight agent</td><td class="num"><span class="dot" title="In production"></span>Unit4</td></tr>
-            <tr><td>Validation, reconciliation</td><td>Payroll in 22 countries</td><td class="num"><span class="dot" title="In production"></span>Unit4</td></tr>
-            <tr><td>RAG, knowledge graphs</td><td>Manufacturing assistant</td><td class="num"><span class="dot" title="In production"></span>Airbus</td></tr>
-            <tr><td>NER and anonymisation</td><td>F1 +20–35%</td><td class="num"><span class="dot" title="In production"></span>Airbus</td></tr>
+            <tr><td>Architecture, infrastructure</td><td>Shared AI platform, from scratch</td><td class="num">Unit4</td></tr>
+            <tr><td>Document AI, OCR + LLM</td><td>Audit, expenses, contracts</td><td class="num">Unit4</td></tr>
+            <tr><td>Data agents</td><td>Snowflake insight agent</td><td class="num">Unit4</td></tr>
+            <tr><td>Validation, reconciliation</td><td>Payroll in 22 countries</td><td class="num">Unit4</td></tr>
+            <tr><td>RAG, knowledge graphs</td><td>Manufacturing assistant</td><td class="num">Airbus</td></tr>
+            <tr><td>NER and anonymisation</td><td>F1 +20–35%</td><td class="num">Airbus</td></tr>
             <tr><td>Drift detection, clustering</td><td>Quality non-conformities</td><td class="num">Airbus</td></tr>
-            <tr><td>NLP, chatbots</td><td>Global chatbot, +20 pp</td><td class="num"><span class="dot" title="In production"></span>Nokia</td></tr>
+            <tr><td>NLP, chatbots</td><td>Global chatbot, +20 pp</td><td class="num">Nokia</td></tr>
             <tr><td>Recommender systems</td><td>Career development</td><td class="num">Nokia</td></tr>
             <tr><td>Predictive ML, segmentation</td><td>Banking campaigns</td><td class="num">Accenture</td></tr>
             <tr><td>Computer vision, 3D</td><td>Stereo depth, segmentation</td><td class="num">ISR</td></tr>
@@ -114,33 +114,139 @@
             <tr><td>Robotics, optimisation</td><td>Navigation, ACO, A*</td><td class="num">MSc</td></tr>
           </tbody>
         </table>
-        <p class="trace"><span class="dot"></span>in production · enterprise software, aerospace, telecom, banking, robotics research</p>
+        <p class="trace">enterprise software, aerospace, telecom, banking, robotics research</p>
       </figure>
     </section>
 
     <section id="work" class="section wrap" aria-labelledby="work-title">
-      <h2 id="work-title">Selected work</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Document AI for Finance</h3>
-          <p>As sole engineer, shipped three document-AI solutions to production: audit template completion, expense matching, and contract validation against CRM and enterprise databases. All three run on one reusable OCR, LLM extraction and review foundation.</p>
-          <p class="trace">Azure · OCR + LLM extraction + review · est. 720 h/yr saved</p>
-        </article>
-        <article class="card">
-          <h3>A portfolio of seven production use cases</h3>
-          <p>Led and architected seven use cases with a team of 10 consultants (3 direct reports) across Sales Ops, People and Customer Success, including sales rule validation, payroll reconciliation in 22 countries and a Snowflake insight agent.</p>
-          <p class="trace">Azure · Snowflake · est. 7,800+ h/yr saved</p>
-        </article>
-        <article class="card">
-          <h3>Shared AI platform: architecture and infrastructure, built from scratch</h3>
-          <p>Designed the architecture and implemented the infrastructure myself, from an empty repo to the platform every solution now runs on: environments, containers, identity and access, deployment and monitoring. Each solution is traced for extraction accuracy, answer quality, errors, latency and cost, and goes through code, architecture and security review. The platform keeps evolving: the latest addition is metrics and dashboards with Prometheus and Grafana.</p>
-          <p class="trace">Microsoft Azure · infrastructure as code · Docker · Langfuse · Prometheus · Grafana · architecture and infra by me</p>
-        </article>
-        <article class="card">
-          <h3>GenAI in production at Airbus</h3>
-          <p>In the Central AI team, built and deployed GenAI solutions for manufacturing process assistance. Industrialised a data anonymisation pipeline that improved F1 score by 20–35% across file types and languages.</p>
-          <p class="trace">GCP · RAG · knowledge graphs · agents · AWS · spaCy · MLflow</p>
-        </article>
+      <h2 id="work-title">Work</h2>
+      <p class="section-intro">Every project, what it does and what it runs on</p>
+      <div class="work-group">
+        <h3 class="work-org">Unit4 <span>Lead AI</span><span class="mono muted">Nov 2025 – present</span></h3>
+        <div class="cards cards-3">
+          <article class="card card-wide">
+            <h4>Shared AI platform, built from scratch</h4>
+            <p class="result">Architecture and infrastructure by me · all solutions run on it</p>
+            <p>I designed the architecture and implemented the infrastructure myself, from an empty repo to the platform every Unit4 AI solution runs on: environments, containers, identity and access, deployment and monitoring. Every solution is traced for extraction accuracy, answer quality, errors, latency and cost, and goes through code, architecture and security review. Still evolving: Prometheus metrics and Grafana dashboards are the latest addition.</p>
+            <p class="trace">Microsoft Azure · infrastructure as code (Bicep) · Docker · Langfuse · Prometheus · Grafana</p>
+          </article>
+          <article class="card">
+            <h4>Audit template completion</h4>
+            <p class="result">Finance · in production</p>
+            <p>Reads audit documents and fills the audit templates automatically, with a review step before anything is final. One of three Finance solutions I shipped as sole engineer.</p>
+            <p class="trace">Microsoft Azure · OCR · LLM extraction · human review</p>
+          </article>
+          <article class="card">
+            <h4>Expense matching</h4>
+            <p class="result">Finance · in production</p>
+            <p>Matches expenses against their supporting documents on the same OCR, LLM extraction and review foundation.</p>
+            <p class="trace">Microsoft Azure · OCR · LLM extraction · document matching</p>
+          </article>
+          <article class="card">
+            <h4>Contract validation</h4>
+            <p class="result">Finance · in production · est. 720 h/yr saved across the 3</p>
+            <p>Validates contracts against CRM and enterprise databases and flags what does not match.</p>
+            <p class="trace">Microsoft Azure · OCR · LLM extraction · CRM and database integration</p>
+          </article>
+          <article class="card">
+            <h4>Sales rule validation</h4>
+            <p class="result">Sales Ops · in production</p>
+            <p>Checks sales deals against the company&#x27;s sales rules, built and run with my team.</p>
+            <p class="trace">Microsoft Azure · rule validation</p>
+          </article>
+          <article class="card">
+            <h4>Payroll reconciliation in 22 countries</h4>
+            <p class="result">People · in production</p>
+            <p>Reconciles payroll data across 22 countries and surfaces the differences for the People team.</p>
+            <p class="trace">Microsoft Azure · data reconciliation</p>
+          </article>
+          <article class="card">
+            <h4>Snowflake insight agent</h4>
+            <p class="result">In production · team of 10, 7 use cases, est. 7,800+ h/yr saved</p>
+            <p>An agent that answers business questions over Snowflake data.</p>
+            <p class="trace">Microsoft Azure · agents · Snowflake</p>
+          </article>
+          <article class="card card-wide">
+            <h4>AI discovery and adoption</h4>
+            <p class="result">21 opportunities · 10 prioritised · ~600 people enabled</p>
+            <p>Ran discovery workshops with directors across Finance, Sales Ops, People and Customer Success: 21 opportunities mapped, 10 prioritised by effort and business case. Ran AI enablement for about 600 people and screen incoming AI requests.</p>
+            <p class="trace">Business cases · build vs buy · Copilot licensing · governance</p>
+          </article>
+        </div>
+      </div>
+      <div class="work-group">
+        <h3 class="work-org">Airbus <span>Tech Lead – Data Scientist</span><span class="mono muted">May 2023 – Nov 2025</span></h3>
+        <div class="cards cards-2">
+          <article class="card">
+            <h4>GenAI manufacturing assistant</h4>
+            <p class="result">In production</p>
+            <p>In the Central AI team, built and deployed GenAI solutions that assist manufacturing processes.</p>
+            <p class="trace">GCP · RAG · knowledge graphs · agentic workflows</p>
+          </article>
+          <article class="card">
+            <h4>Data anonymisation pipeline</h4>
+            <p class="result">F1 +20–35%</p>
+            <p>Industrialised a pipeline that anonymises documents across file types and languages.</p>
+            <p class="trace">AWS · spaCy · NER · MLflow</p>
+          </article>
+          <article class="card">
+            <h4>Drift detection and quality clustering</h4>
+            <p class="result">Manufacturing quality</p>
+            <p>Semantic-similarity drift detection, and clustering of quality non-conformities for predictive maintenance.</p>
+            <p class="trace">Embeddings · clustering · text similarity</p>
+          </article>
+          <article class="card">
+            <h4>GenAI proofs of concept</h4>
+            <p class="result">Global Business Services</p>
+            <p>With Global Business Services: cross-border material specification matching, copywriting aids and HR support.</p>
+            <p class="trace">Clustering · text similarity · GenAI</p>
+          </article>
+        </div>
+      </div>
+      <div class="work-group">
+        <h3 class="work-org">Nokia <span>Machine Learning & AI Engineer</span><span class="mono muted">Nov 2021 – May 2023</span></h3>
+        <div class="cards cards-2">
+          <article class="card">
+            <h4>Global chatbot accuracy</h4>
+            <p class="result">+20 pp answer accuracy</p>
+            <p>Developed and deployed NLP models that raised the global chatbot&#x27;s answer accuracy, benchmarked with QBox.</p>
+            <p class="trace">Microsoft Azure · NLP · text similarity · QBox</p>
+          </article>
+          <article class="card">
+            <h4>Career development recommender</h4>
+            <p class="result">Recommendation system</p>
+            <p>Recommends career development paths to employees.</p>
+            <p class="trace">Similarity · clustering</p>
+          </article>
+        </div>
+      </div>
+      <div class="work-group">
+        <h3 class="work-org">Accenture <span>Data Scientist</span><span class="mono muted">Mar 2021 – Nov 2021</span></h3>
+        <div class="cards cards-3">
+          <article class="card card-wide">
+            <h4>Banking campaign prediction</h4>
+            <p class="result">External banking clients</p>
+            <p>Predictive models for banking clients that forecast customer response to campaigns, plus audience segmentation for personalised advertising.</p>
+            <p class="trace">Python · scikit-learn · clustering · text analysis · Hadoop · NoSQL · AWS · Power BI · Qlik Sense</p>
+          </article>
+        </div>
+      </div>
+      <div class="work-group">
+        <h3 class="work-org">ISR Lisboa and IST <span>Research</span><span class="mono muted">MSc, 2021</span></h3>
+        <div class="cards cards-2">
+          <article class="card">
+            <h4>3D visual focus of attention</h4>
+            <p class="result">IEEE publication</p>
+            <p>Estimates which object a person is looking at from 3D head and gaze pose, using stereo depth, 3D reconstruction and panoptic segmentation, for human-robot interaction. Published at an IEEE conference.</p>
+            <p class="trace">Computer vision · stereo · 3D reconstruction · pose and gaze tracking · panoptic segmentation</p>
+          </article>
+          <article class="card">
+            <h4>Eye-image classification</h4>
+            <p class="result">Deep learning</p>
+            <p>A deep learning system that classifies people from images of their eyes.</p>
+            <p class="trace">Python · TensorFlow · CNNs</p>
+          </article>
+        </div>
       </div>
     </section>
 
