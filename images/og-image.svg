@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#f7f6f2"/>
-<text x="96" y="150" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="30" fill="#5b5852">Lead AI at Unit4 · Remote, Portugal</text>
-<text x="96" y="260" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="88" font-weight="500" fill="#1c1b19">Carlos Simões</text>
-<text x="96" y="340" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="38" fill="#1c1b19">I design, build and lead AI</text>
-<text x="96" y="390" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="38" fill="#1c1b19">that runs in production</text>
-<line x1="96" y1="470" x2="1104" y2="470" stroke="#1c1b19" stroke-opacity="0.16"/>
-<circle cx="104" cy="521" r="6" fill="#0f6b5c"/>
-<text x="124" y="530" font-family="DejaVu Sans Mono, monospace" font-size="26" fill="#5b5852">10 use cases in production · Azure · GCP · AWS</text>
+<rect width="1200" height="630" fill="#05070d"/>
+<radialGradient id="g" cx="50%" cy="0%" r="70%"><stop offset="0" stop-color="#3ddc97" stop-opacity="0.22"/><stop offset="1" stop-color="#3ddc97" stop-opacity="0"/></radialGradient><rect width="1200" height="630" fill="url(#g)"/>
+<text x="96" y="150" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="30" fill="#a3abbd">Lead AI at Unit4 · Remote, Portugal</text>
+<text x="96" y="260" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="88" font-weight="500" fill="#e8ecf5">Carlos Simões</text>
+<text x="96" y="340" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="38" fill="#e8ecf5">I design, build and lead AI</text>
+<text x="96" y="390" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="38" fill="#e8ecf5">that runs in production</text>
+<line x1="96" y1="470" x2="1104" y2="470" stroke="#e8ecf5" stroke-opacity="0.16"/>
+<circle cx="104" cy="521" r="6" fill="#3ddc97"/>
+<text x="124" y="530" font-family="DejaVu Sans Mono, monospace" font-size="26" fill="#a3abbd">10 use cases in production · Azure · GCP · AWS</text>
 </svg>
