@@ -215,3 +215,16 @@ h3 { font-size: 17px; line-height: 1.4; }
 .js .steps li.on::before { box-shadow: 0 0 0 4px rgba(5, 7, 13, 0.6), 0 0 24px 6px rgba(61, 220, 151, 0.55); }
 @media (prefers-reduced-motion: reduce) { .js .steps li:not(.rail) { opacity: 1; } .rail-glow { top: -60px; } }
 @media (max-width: 600px) { .steps { padding-left: 64px; } .steps .rail { left: 12px; width: 28px; } .steps li:not(.rail)::before { left: -50px; width: 24px; height: 24px; font-size: 12px; } .steps h3 { font-size: 21px; } }
+
+/* Work groups collapse by role */
+details.work-group { border: 1px solid var(--line); border-radius: var(--r2); background: linear-gradient(180deg, #0a0e16, var(--paper)); transition: border-color 200ms var(--ease); }
+details.work-group + details.work-group { margin-top: var(--s4); padding-top: 0; border-top: 1px solid var(--line); }
+details.work-group:hover, details.work-group[open] { border-color: var(--line-2); }
+summary.work-org { list-style: none; cursor: pointer; margin: 0; padding: var(--s6); align-items: center; }
+summary.work-org::-webkit-details-marker { display: none; }
+summary.work-org .work-count { margin-left: auto; color: var(--muted); font-size: 13px; }
+summary.work-org .chev { width: 20px; height: 20px; color: var(--ink-2); transition: transform 200ms var(--ease); }
+details[open] > summary .chev { transform: rotate(180deg); }
+details[open] > summary.work-org { padding-bottom: var(--s4); }
+details.work-group > .cards { padding: 0 var(--s6) var(--s6); }
+@media (max-width: 600px) { summary.work-org { padding: var(--s4); } details.work-group > .cards { padding: 0 var(--s4) var(--s4); } }
